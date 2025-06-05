@@ -35,6 +35,9 @@ use MoonShine\UI\Components\{Breadcrumbs,
 use MoonShine\Laravel\Resources\MoonShineUserResource;
 use MoonShine\Laravel\Resources\MoonShineUserRoleResource;
 use MoonShine\MenuManager\MenuItem;
+use App\MoonShine\Resources\GradeResource;
+use App\MoonShine\Resources\SubjectResource;
+use App\MoonShine\Resources\StudentResource;
 
 final class MoonShineLayout extends AppLayout
 {
@@ -60,6 +63,9 @@ final class MoonShineLayout extends AppLayout
                 static fn() => __('moonshine::ui.resource.user_title'),
                 UserResource::class
             ),
+            MenuItem::make('Grades', GradeResource::class),
+            MenuItem::make('Subjects', SubjectResource::class),
+            MenuItem::make('Students', StudentResource::class),
         ];
     }
 
@@ -69,6 +75,9 @@ final class MoonShineLayout extends AppLayout
     protected function colors(ColorManagerContract $colorManager): void
     {
         parent::colors($colorManager);
+        $colorManager->infoBg('#3b82f6')
+        ->secondary('#f97316')
+        ->primary('#3636ff');
     }
 
     /**

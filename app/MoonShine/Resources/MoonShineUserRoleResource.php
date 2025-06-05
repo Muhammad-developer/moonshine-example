@@ -14,6 +14,7 @@ use MoonShine\Support\ListOf;
 use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Fields\ID;
 use MoonShine\UI\Fields\Text;
+use Spatie\Permission\Models\Role;
 
 #[Icon('bookmark')]
 #[Group('moonshine::ui.resource.system', 'users', translatable: true)]
@@ -23,7 +24,7 @@ use MoonShine\UI\Fields\Text;
  */
 class MoonShineUserRoleResource extends ModelResource
 {
-    protected string $model = MoonshineUserRole::class;
+    protected string $model = Role::class;
 
     protected string $column = 'name';
 
